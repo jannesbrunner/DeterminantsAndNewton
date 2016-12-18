@@ -1,28 +1,32 @@
 package htwimi2016;
 
 import java.io.BufferedReader;
+import java.util.Queue;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
 public class Det {
-    public static int nrOfMult;
-    public int nrOfDigits;
-    public double[][] A;
+    private int nrOfMult;
+    private int nrOfDigits;
+    private double[][] A;
+    private Queue<double[][]> subDets;
     
     
     public Det(String fileToRead) {
 		
     	if(test(fileToRead)) {;
     	
+    	
+    	
     	System.out.println("A:");
         showMatrix(A, nrOfDigits);
         System.out.println();
         
-        Det.nrOfMult = 0;
-        System.out.println("det(A) = "+Det.calcDet(A));
-        System.out.println("Anzahl der Multiplikationen: "+Det.nrOfMult);
+        nrOfMult = 0;
+        System.out.println("det(A) = "+ calcDetRec(A));
+        System.out.println("Anzahl der Multiplikationen: "+ nrOfMult);
     	} 
     	
 	}
@@ -109,12 +113,27 @@ public class Det {
 	
     
     //Berechnung mit 1. Normalform
-    public static double calcDet(double[][] A){
+    private double calcDet(double[][] A){
         return Double.NaN; // Durch Ihren Code ersetzen!
     }
 
     //Rekursive Berechnung mit Def. L.4.1.1 Skript
-    public static double calcDetRec(double[][] A){
-        return Double.NaN; // Durch Ihren Code ersetzen!
+    private double calcDetRec(double[][] A){
+        if(A.length == 1) return A[0][0];
+        
+        double detA = 0;
+        int subDets = A.length; 
+        
+        for(int i = 0; i < subDets; i++) {
+        	
+        }
+       
+        
+    	
+    	
+    	return detA; // Durch Ihren Code ersetzen!
     }
+    
+
+    
 }
